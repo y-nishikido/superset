@@ -212,6 +212,7 @@ const FilterBar: React.FC<FiltersBarProps> = ({
   const isApplyDisabled =
     !isInitialized || areObjectsEqual(dataMaskSelected, lastAppliedFilterData);
 
+  console.log('is filter change:', isFilterSetChanged)
   return (
     <BarWrapper {...getFilterBarTestId()} className={cx({ open: filtersOpen })}>
       <CollapsedBar

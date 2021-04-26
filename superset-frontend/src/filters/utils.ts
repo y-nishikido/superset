@@ -33,15 +33,7 @@ export const getSelectExtraFormData = (
   inverseSelection = false,
 ): ExtraFormData => {
   const extra: ExtraFormData = {};
-  if (emptyFilter) {
-    extra.adhoc_filters = [
-      {
-        expressionType: 'SQL',
-        clause: 'WHERE',
-        sqlExpression: '1 = 0',
-      },
-    ];
-  } else {
+  if (!emptyFilter) {
     extra.filters =
       value === undefined || value === null || value.length === 0
         ? []
